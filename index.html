@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MisRx - Receta Digital</title>
-    <link rel="stylesheet" href="styles.css?v=1770129561902">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
@@ -14,14 +13,12 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f5f8;
             color: #222;
             display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
         }
 
         .container {
@@ -86,15 +83,16 @@
 
         .drug-item {
             background: #f9f9f9;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
-            border-left: 4px solid var(--primary);
+            border-left: 5px solid var(--primary);
         }
 
         .drug-name {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: var(--secondary);
+            margin-bottom: 5px;
         }
 
         .qr-container {
@@ -109,7 +107,6 @@
             background: white;
             border: 1px solid #ddd;
             min-height: 150px;
-            min-width: 150px;
         }
 
         .footer-text {
@@ -117,13 +114,15 @@
             color: #888;
             text-align: center;
             margin-top: 10px;
+            line-height: 1.4;
         }
 
         .stamp {
-            margin-top: 20px;
+            margin-top: 30px;
             border-top: 1px solid #ccc;
             padding-top: 10px;
             text-align: right;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -131,9 +130,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">
-                MisRx
-            </div>
+            <div class="logo">MisRx</div>
             <div class="date">02/02/2026</div>
         </div>
 
@@ -166,8 +163,8 @@
         <div class="section">
             <div class="section-title">Prescripción</div>
             <div class="drug-item">
-                <div class="drug-name">RIVOTRIL (clonazepam) 2 mg</div>
-                <div>Presentación: comp.x 60</div>
+                <div class="drug-name">AMOXICILINA, Genérico</div>
+                <div style="font-size: 16px; margin-bottom: 10px;">Amoxicilina 500 mg comp. x 21 – (500 mg)</div>
                 <div class="data-row">
                     <span class="label">Cantidad:</span>
                     <span>1 (UNA) Unidad/es</span>
@@ -190,6 +187,7 @@
         <div class="qr-container">
             <div id="qrcode" class="qr-code"></div>
             <div class="footer-text">
+                Escanee este código para validar la receta<br>
                 Token: 0c8ab814-1a25-48a8-b5d2-184b98408ab9
             </div>
         </div>
