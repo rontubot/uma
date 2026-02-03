@@ -1,0 +1,24 @@
+{
+  "name": "uma_repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rontubot/uma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rontubot/uma/issues"
+  },
+  "homepage": "https://github.com/rontubot/uma#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
