@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,28 @@
             --primary: #AEC500;
             --secondary: #133562;
         }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f5f8;
             color: #222;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
+
         .container {
             max-width: 600px;
             margin: 20px auto;
             background: white;
             padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            display: block !important;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -34,6 +42,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -41,10 +50,7 @@
             display: flex;
             align-items: center;
         }
-        .logo img {
-            height: 32px;
-            margin-right: 10px;
-        }
+
         .title {
             text-align: center;
             font-size: 20px;
@@ -52,12 +58,14 @@
             color: var(--secondary);
             margin: 20px 0;
         }
+
         .section {
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #eee;
             border-radius: 4px;
         }
+
         .section-title {
             font-size: 14px;
             color: #666;
@@ -65,62 +73,68 @@
             text-transform: uppercase;
             font-weight: bold;
         }
+
         .data-row {
             display: flex;
             justify-content: space-between;
             margin: 5px 0;
         }
+
         .label {
             font-weight: bold;
         }
+
         .drug-item {
             background: #f9f9f9;
             padding: 10px;
             margin: 10px 0;
             border-left: 4px solid var(--primary);
         }
+
         .drug-name {
             font-size: 18px;
             font-weight: bold;
             color: var(--secondary);
         }
+
         .qr-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 30px;
         }
+
         .qr-code {
             padding: 10px;
             background: white;
             border: 1px solid #ddd;
+            min-height: 150px;
+            min-width: 150px;
         }
+
         .footer-text {
             font-size: 12px;
             color: #888;
             text-align: center;
             margin-top: 10px;
         }
+
         .stamp {
             margin-top: 20px;
             border-top: 1px solid #ccc;
             padding-top: 10px;
             text-align: right;
         }
-        @media print {
-            body { background: white; }
-            .container { box-shadow: none; margin: 0; max-width: 100%; }
-        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <div class="logo">
-                <img src="favicon.png" alt="MisRx">
                 MisRx
             </div>
-            <div class="date" id="current-date">02/02/2026</div>
+            <div class="date">02/02/2026</div>
         </div>
 
         <div class="title">RECETA DIGITAL</div>
@@ -147,10 +161,6 @@
                 <span class="label">DNI:</span>
                 <span>45687410</span>
             </div>
-            <div class="data-row">
-                <span class="label">Plan:</span>
-                <span>Plan General - Paciente Particular</span>
-            </div>
         </div>
 
         <div class="section">
@@ -162,10 +172,6 @@
                     <span class="label">Cantidad:</span>
                     <span>1 (UNA) Unidad/es</span>
                 </div>
-            </div>
-            <div class="data-row">
-                <span class="label">Diagnóstico:</span>
-                <span>insomnio</span>
             </div>
         </div>
 
@@ -184,7 +190,6 @@
         <div class="qr-container">
             <div id="qrcode" class="qr-code"></div>
             <div class="footer-text">
-                Escanee este código para validar la receta<br>
                 Token: 0c8ab814-1a25-48a8-b5d2-184b98408ab9
             </div>
         </div>
@@ -193,21 +198,20 @@
             <strong>Firma Digitalizada</strong><br>
             Ministerio de Salud de la Nación
         </div>
-
-        <div class="footer-text" style="margin-top: 30px;">
-            Buscador Nacional de Medicamentos: <br>
-            https://www.argentina.gob.ar/buscador-de-precios-de-medicamentos
-        </div>
     </div>
 
     <script>
-        // Set dynamic QR code to point to current URL
-        var currentUrl = window.location.href;
-        new QRCode(document.getElementById("qrcode"), {
-            text: currentUrl,
-            width: 150,
-            height: 150
-        });
+        try {
+            var currentUrl = window.location.href;
+            new QRCode(document.getElementById("qrcode"), {
+                text: currentUrl,
+                width: 150,
+                height: 150
+            });
+        } catch (e) {
+            console.error("QR Error:", e);
+        }
     </script>
 </body>
+
 </html>
